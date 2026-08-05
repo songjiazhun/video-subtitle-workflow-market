@@ -45,14 +45,23 @@ def main() -> int:
         print("✅ ffmpeg 已安装")
     elif args.install:
         print("⏳ 正在安装 ffmpeg ...")
-        if run(["sudo", "apt-get", "update", "-qq"]) and \
-           run(["sudo", "apt-get", "install", "-y", "-qq", "ffmpeg"]):
+        if sys.platform == "darwin":
+            ok_install = run(["brew", "install", "ffmpeg"])
+            hint = "brew install ffmpeg"
+        else:
+            ok_install = run(["sudo", "apt-get", "update", "-qq"]) and \
+                run(["sudo", "apt-get", "install", "-y", "-qq", "ffmpeg"])
+            hint = "sudo apt-get install -y ffmpeg"
+        if ok_install:
             print("✅ ffmpeg 安装完成")
         else:
-            print("❌ ffmpeg 安装失败，请手动执行：sudo apt-get install -y ffmpeg")
+            print(f"❌ ffmpeg 安装失败，请手动执行：{hint}")
             ok = False
     else:
-        print("❌ 缺少 ffmpeg  ->  sudo apt-get install -y ffmpeg")
+        if sys.platform == "darwin":
+            print("❌ 缺少 ffmpeg  ->  brew install ffmpeg")
+        else:
+            print("❌ 缺少 ffmpeg  ->  sudo apt-get install -y ffmpeg")
         ok = False
 
     # 转写引擎：二选一即可
