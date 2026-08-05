@@ -2,8 +2,8 @@
   "name": "video-subtitle-workflow-market",
   "description": "影片字幕全流程工作流技能市场：音频/视频转 SRT、对照原稿优化、字卡标注、社群平台影片介绍。",
   "owner": {
-    "name": "YOUR_NAME",
-    "email": "your@email.com"
+    "name": "songjiazhun",
+    "email": "869077613@qq.com"
   },
   "metadata": {
     "version": "1.0.0"
@@ -17,7 +17,7 @@
       "version": "1.0.0",
       "category": "media",
       "author": {
-        "name": "YOUR_NAME"
+        "name": "songjiazhun"
       },
       "homepage": "",
       "license": "MIT",
