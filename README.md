@@ -13,21 +13,23 @@
 
 ## 作为市场安装（推荐）
 
-把本仓库作为自定义市场添加到 CodeBuddy：
+把本仓库作为自定义市场添加到 CodeBuddy / WorkBuddy：
 
-1. CodeBuddy 设置 → 市场 / Marketplace → 添加市场
-2. 填写本仓库的 git 地址
+1. 设置 → 市场 / Marketplace → 添加市场
+2. 填写本仓库的 git 地址：`https://github.com/songjiazhun/video-subtitle-workflow-market.git`
 3. 刷新后，在技能市场搜索 `video-subtitle-workflow`，一键安装
 
 或手动在 `~/.codebuddy/plugins/known_marketplaces.json` 增加一项（参照环境内 `cb_teams_marketplace` 写法）。
 
 ## 本地直接安装（免市场）
 
+仓库根目录已附带独立安装包，克隆/下载本仓库后，在仓库根目录执行：
+
 ```bash
 # 方式一：解压安装
 unzip video-subtitle-workflow.zip -d ~/.codebuddy/skills/
 
-# 方式二：自解压安装器
+# 方式二：自解压安装器（会从同目录的 zip 解包）
 bash install-skill.sh
 ```
 
