@@ -19,21 +19,24 @@
 2. 填写本仓库的 git 地址：`https://github.com/songjiazhun/video-subtitle-workflow-market.git`
 3. 刷新后，在技能市场搜索 `video-subtitle-workflow`，一键安装
 
-或手动在 `~/.codebuddy/plugins/known_marketplaces.json` 增加一项（参照环境内 `cb_teams_marketplace` 写法）。
+或手动在配置文件增加一项（参照环境内 `cb_teams_marketplace` 写法）：CodeBuddy 为 `~/.codebuddy/plugins/known_marketplaces.json`，WorkBuddy 为 `~/.workbuddy/plugins/known_marketplaces.json`。
 
 ## 本地直接安装（免市场）
 
 仓库根目录已附带独立安装包，克隆/下载本仓库后，在仓库根目录执行：
 
 ```bash
-# 方式一：解压安装
+# 方式一：解压安装（CodeBuddy）
 unzip video-subtitle-workflow.zip -d ~/.codebuddy/skills/
+# 方式一（WorkBuddy）：目标目录换成 ~/.workbuddy/skills/
+unzip video-subtitle-workflow.zip -d ~/.workbuddy/skills/
 
-# 方式二：自解压安装器（会从同目录的 zip 解包）
-bash install-skill.sh
+# 方式二：自解压安装器（会从同目录的 zip 解包，默认装到 ~/.codebuddy/skills）
+bash install-skill.sh                      # CodeBuddy
+bash install-skill.sh ~/.workbuddy/skills  # WorkBuddy
 ```
 
-安装后，把任意音频/视频丢给 CodeBuddy 并说「转字幕 / 生成 SRT / 加字卡 / 写影片介绍」即可触发。
+安装后，把任意音频/视频丢给 CodeBuddy / WorkBuddy 并说「转字幕 / 生成 SRT / 加字卡 / 写影片介绍」即可触发。
 
 ## 仓库结构
 
